@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "electron": "^31.2.1"
+  },
+  "scripts": {
+    "dev": "watchexec -w src -c -- electron src/main.js"
+  }
+}

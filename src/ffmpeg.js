@@ -20,10 +20,20 @@ export async function ensurePlayableInBrowser(path) {
 
     mkdirSync(dirname(output), { recursive: true });
 
-    const args = [
-        "-i", path, "-c:v", "h264_nvenc", "-tune:v", "hq", "-rc:v", "vbr", "-cq:v",
-        "20", "-b:v", "0", "-profile:v", "high", "-c:a", "aac",
-        "-pix_fmt", "yuv420p", "-movflags", "+faststart", "-y",
+     const args = [
+        "-i", path,
+        "-c:v", "h264_nvenc",
+        "-tune:v", "hq",
+        "-rc:v", "vbr",
+        "-cq:v", "20",
+        "-b:v", "0",
+        "-profile:v", "high",
+        "-g", "3",
+        "-bf", "2",
+        "-c:a", "aac",
+        "-pix_fmt", "yuv420p",
+        "-movflags", "+faststart",
+        "-y",
         output
     ];
 

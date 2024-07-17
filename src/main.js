@@ -39,3 +39,7 @@ app.on('window-all-closed', () => {
 });
 
 ipcMain.handle("getState", () => state.toJSON());
+ipcMain.on("sync", (_, data) => {
+    state = new State(data.state);
+});
+

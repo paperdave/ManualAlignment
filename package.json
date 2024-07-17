@@ -5,6 +5,6 @@
     "electron": "^31.2.1"
   },
   "scripts": {
-    "dev": "watchexec -w src -c -- electron src/main.js"
+    "dev": "electron src/main.js"
   }
 }

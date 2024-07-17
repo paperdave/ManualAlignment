@@ -14,6 +14,11 @@ export class State {
     mute_audio = false;
     mute_video = false;
 
+    mark_in = -1;
+    mark_out = -1;
+    mark_audio = -1;
+    mark_video = -1;
+
     constructor(assignments) {
         Object.assign(this, assignments ?? {});
         ensureNoNulls(this);

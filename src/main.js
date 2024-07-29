@@ -4,10 +4,12 @@ import path from 'path';
 
 import { State } from './State.js';
 
+const video_path = '/home/dave/Videos/cant-sing/IMG_2381.MOV';
 let state = new State({
     root: '/home/dave/Videos/cant-sing',
     audio_path: '/home/dave/Videos/cant-sing/cant-sing.wav',
-    video_path: await ensurePlayableInBrowser('/home/dave/Videos/cant-sing/IMG_2381.MOV'),
+    original_video_path: video_path,
+    video_path: await ensurePlayableInBrowser(video_path),
 });
 
 function createWindow() {

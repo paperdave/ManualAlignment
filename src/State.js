@@ -4,6 +4,8 @@ export class State {
     /** @type {string} */
     video_path;
     /** @type {string} */
+    original_video_path;
+    /** @type {string} */
     audio_path;
 
     fps = 30;
@@ -11,8 +13,8 @@ export class State {
     video_rate = 1;
     cursor = 0;
 
-    mute_audio = false;
-    mute_video = false;
+    audio_volume = 1;
+    video_volume = 1;
 
     mark_in = -1;
     mark_out = -1;
@@ -39,9 +41,9 @@ export class State {
     }
 }
 
-export function ensureNoNulls(obj) {
+export function ensureNoNulls(obj, exclusions = []) {
     for(const k of Object.keys(obj))
-        if(obj[k] == null)
+        if (obj[k] == null && !exclusions.includes(k))
             throw new Error(`Missing ${k} in construction`);
 }
 
